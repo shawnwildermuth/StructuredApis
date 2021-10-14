@@ -13,11 +13,20 @@ public class JurisContext : DbContext
   }
 
   public DbSet<Client> Clients => Set<Client>();
+  public DbSet<Address> Addresses => Set<Address>();
 
   protected override void OnConfiguring(DbContextOptionsBuilder bldr)
   {
     base.OnConfiguring(bldr);
 
-    bldr.UseSqlServer(_config["ConnectionString:JurisDb"]);
+    bldr.UseSqlServer(_config["ConnectionStrings:JurisDb"]);
+  }
+
+  protected override void OnModelCreating(ModelBuilder bldr)
+  {
+    base.OnModelCreating(bldr);
+
+    bldr.Entity<Client>()
+      .HasOne(c => c.Address);
   }
 }
