@@ -10,10 +10,6 @@ builder.Services.AddScoped<IJurisRepository, JurisRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
 app.MapGet("/api/clients", async (IJurisRepository repository) =>
 {
   return Results.Ok(await repository.GetClientsAsync());
