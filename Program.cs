@@ -10,9 +10,6 @@ RegisterServices(bldr.Services);
 var app = bldr.Build();
 
 // Configure the Middleware
-
-app.UseHttpsRedirection();
-
 var apis = app.Services.GetServices<IApi>();
 foreach (var api in apis)
 {
