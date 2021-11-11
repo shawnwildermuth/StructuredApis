@@ -1,7 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using StructuredApis.Data;
-using StructuredApis.Data.Entities;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
