@@ -1,7 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using StructuredApis.Data;
-using StructuredApis.Data.Entities;
-
 var bldr = WebApplication.CreateBuilder(args);
 
 // Register Your Services
