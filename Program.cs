@@ -6,6 +6,10 @@ builder.Services.AddScoped<IJurisRepository, JurisRepository>();
 
 var app = builder.Build();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 // TODO: APIs
+app.MapGet("/api/foo", () => "Hello World");
 
 app.Run();
